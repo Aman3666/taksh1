@@ -82,7 +82,7 @@ export const MENU_ITEMS = [
   {
     name: "Tandoori Lotus Stem",
     category: "starters",
-    price: 480,
+    
     image: IMAGES.paneerSkewers,
     desc: "Kashmiri lotus stem, hung curd, smoked paprika, charcoal seared.",
   },
