@@ -655,7 +655,7 @@ function ContactStrip() {
             </Block>
             <Block icon={<Instagram size={16} />} title="Follow">
               <a href={BRAND.instagram} target="_blank" rel="noreferrer" className="link-luxury">
-                @takshcrafted
+                {BRAND.instagramHandle}
               </a>
             </Block>
           </div>

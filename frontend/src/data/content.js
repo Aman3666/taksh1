@@ -9,7 +9,8 @@ export const BRAND = {
     "Goldi Cinemark Complex, Railway Station Road, Chhatrapati Sambhajinagar, Maharashtra",
   phone: "+91 96234 53329",
   phoneRaw: "+919623453329",
-  instagram: "https://instagram.com",
+  instagram: "https://instagram.com/taksh.ind",
+  instagramHandle: "@taksh.ind",
   email: "reserve@takshdining.in",
   hours: [
     { day: "Mon — Thu", time: "12:00 — 23:00" },

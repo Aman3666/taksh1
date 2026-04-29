@@ -64,14 +64,8 @@ export default function Contact() {
               </a>
             </ContactBlock>
             <ContactBlock icon={<Instagram size={18} />} title="Follow">
-              <a
-                href={BRAND.instagram}
-                target="_blank"
-                rel="noreferrer"
-                className="link-luxury"
-                data-testid="contact-instagram-link"
-              >
-                @takshcrafted
+              <a href={BRAND.instagram} target="_blank" rel="noreferrer" className="link-luxury" data-testid="contact-instagram-link">
+                {BRAND.instagramHandle}
               </a>
             </ContactBlock>
           </Reveal>
