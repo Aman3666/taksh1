@@ -1,0 +1,31 @@
+# Files NOT shipped to Vercel — keeps the deploy lean and avoids conflicts.
+
+# Local-only FastAPI server (Emergent supervisor uses it; Vercel uses /api/index.py instead)
+backend/
+
+# Tests, reports, memory
+tests/
+test_reports/
+backend/tests/
+memory/
+scripts/
+
+# Build / cache
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/node_modules/
+frontend/node_modules/
+frontend/build/
+.cache/
+.DS_Store
+
+# Local env files (Vercel uses dashboard env vars)
+.env
+**/.env.local
+**/.env.development
+backend/.env
+
+# Misc
+*.log
+*.swp
