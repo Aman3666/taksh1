@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -47,6 +48,19 @@ export function SplitWords({ text, className = "", delay = 0 }) {
 }
 
 export function ParallaxImage({ src, alt = "", className = "", strength = 80 }) {
+  const isMobile = useIsMobile();
+  if (isMobile) {
+    // Plain image on mobile — skip useScroll() to save a scroll listener and 60fps recalcs.
+    return (
+      <div className={`relative overflow-hidden ${className}`}>
+        <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+      </div>
+    );
+  }
+  return <ParallaxImageDesktop src={src} alt={alt} className={className} strength={strength} />;
+}
+
+function ParallaxImageDesktop({ src, alt, className, strength }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [-strength, strength]);

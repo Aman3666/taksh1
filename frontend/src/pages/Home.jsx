@@ -14,6 +14,7 @@ import {
   BLOG_POSTS,
 } from "../data/content";
 import { Reveal, ParallaxImage, PageTransition } from "../components/Motion";
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function Home() {
   return (
@@ -39,10 +40,11 @@ export default function Home() {
 /* ============= HERO ============= */
 function Hero() {
   const heroRef = useRef(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : 200]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, isMobile ? 1 : 0]);
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, isMobile ? 1 : 1.18]);
 
   return (
     <section

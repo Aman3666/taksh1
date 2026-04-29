@@ -8,7 +8,10 @@ export default function CustomCursor() {
   const raf = useRef(null);
 
   useEffect(() => {
+    // Hard skip on touch / coarse pointer devices.
+    if (typeof window === "undefined") return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
+    if (window.matchMedia("(max-width: 1023px)").matches) return;
 
     const onMove = (e) => {
       pos.current.x = e.clientX;
@@ -54,8 +57,8 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={ringRef} className="cursor-ring hidden md:block" data-testid="cursor-ring" />
-      <div ref={dotRef} className="cursor-dot hidden md:block" data-testid="cursor-dot" />
+      <div ref={ringRef} className="cursor-ring hidden lg:block" data-testid="cursor-ring" />
+      <div ref={dotRef} className="cursor-dot hidden lg:block" data-testid="cursor-dot" />
     </>
   );
 }

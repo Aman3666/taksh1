@@ -142,6 +142,38 @@ html.lenis body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Mobile: reduce GPU-heavy effects to keep things smooth */
+@media (max-width: 1023px) {
+  .glass {
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .grain::before {
+    display: none !important;
+  }
+  /* Disable cursor styles on touch */
+  body, a, button, input, textarea, select, [role="button"] {
+    cursor: auto !important;
+  }
+  /* Tone down Hero parallax-related transitions */
+  .liquid-bg {
+    background:
+      radial-gradient(60% 40% at 20% 10%, rgba(6, 78, 59, 0.25) 0%, transparent 60%),
+      radial-gradient(70% 60% at 50% 100%, rgba(9, 121, 105, 0.15) 0%, transparent 70%),
+      #050505;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .gold-line {
   background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
   height: 1px;
@@ -294,6 +326,13 @@ html.lenis body {
 }
 .luxury-input:focus {
   border-bottom-color: #d4af37;
+}
+
+/* Mobile image perf: prefer narrower fetched assets via Pexels w param */
+@media (max-width: 768px) {
+  img[src*="pexels.com"][src*="w=1200"] {
+    /* hint browser via decoding=async; no JS swap to keep things simple */
+  }
 }
 
 [data-debug-wrapper="true"] {
