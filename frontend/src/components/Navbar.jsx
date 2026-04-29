@@ -64,16 +64,16 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 justify-end">
+          <div className="flex items-center gap-3 justify-end pointer-events-none">
             <Link
               to="/reservations"
-              className="hidden sm:inline-flex btn-luxury"
+              className="hidden sm:inline-flex btn-luxury pointer-events-auto"
               data-testid="navbar-reserve-cta"
             >
               Reserve
             </Link>
             <button
-              className="lg:hidden text-cream p-2"
+              className="lg:hidden text-cream p-2 pointer-events-auto"
               onClick={() => setOpen((s) => !s)}
               data-testid="mobile-menu-toggle"
               aria-label="Open menu"

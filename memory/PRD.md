@@ -32,8 +32,10 @@ A complete, production-ready, multi-page luxury restaurant website for "Taksh Cr
 - Frontend pages — all 10 — with Framer Motion entry animations, parallax images, Reveal+SplitWords primitives.
 - Custom cursor (gold dot + trailing ring).
 - Lenis smooth scroll.
-- Luxury 2.2s loading screen.
-- Sticky glassmorphism navbar with mobile menu drawer.
+- Real brand logo image integrated (navbar, footer, loading screen) with CSS filter to remove white background.
+- Improved cinematic 3-second loading screen: liquid backdrop, glowing logo, "PURE · CRAFTED · ROYAL" tagline, animated progress bar with percentage, top "WELCOME" eyebrow + bottom "EST. 2022 / VEGETARIAN FINE DINING" stamps.
+- **Long scrollable Home page (~12000px) with 14 sections**: Hero → Philosophy → Parallax break → Signatures → Stats → Menu Categories preview → Ambience → Timeline preview → Gallery preview → Events preview → Testimonial carousel → Reservation CTA → Blog preview → Contact strip. Each section links into its dedicated page route.
+- Sticky glassmorphism navbar with mobile menu drawer; pointer-events fix so all 8 nav links remain clickable.
 - Footer with hours, address, links, instagram.
 - Menu with interactive category filtering and 3D tilt-on-hover cards.
 - Gallery masonry layout with category filter and full-screen lightbox.
@@ -42,12 +44,12 @@ A complete, production-ready, multi-page luxury restaurant website for "Taksh Cr
 - Blog with featured + grid layout.
 - Google Maps embed on Contact page.
 - SEO meta + Restaurant schema.org JSON-LD.
-- Verified vegetarian Pexels image set across menu/gallery/blog.
+- Verified vegetarian Pexels image set across menu/gallery/blog (paneer, dal, palak, kebab, kheer/saffron phirni, etc.).
 
-## Test Results (Iteration 1)
-- Backend: 11/11 pytest pass (100%).
-- Frontend: All forms, filters, navigation, carousel work — 100% success.
-- No console errors.
+## Test Results (Iteration 2 — long-scroll home)
+- Backend: still 11/11 pytest pass (re-used iteration 1 suite).
+- Frontend: After navbar pointer-events fix, all 8 nav links clickable. All forms, filters, carousels work — no console errors.
+- Loading screen runs cleanly for ~3s on first paint.
 
 ## Prioritized Backlog
 ### P0 (Done)
