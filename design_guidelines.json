@@ -1,0 +1,152 @@
+{
+  "theme": "Dark",
+  "archetype": "5 (Jewel & Luxury)",
+  "colors": {
+    "background": {
+      "primary": "#050505",
+      "secondary": "#0A0A0A",
+      "surface": "#121212",
+      "surface_glass": "rgba(10, 10, 10, 0.6)"
+    },
+    "border": {
+      "default": "#262626",
+      "glass": "rgba(255, 255, 255, 0.1)",
+      "gold": "#D4AF37"
+    },
+    "text": {
+      "primary": "#FDFBF7",
+      "secondary": "#9C855C",
+      "muted": "#737373",
+      "gold": "#D4AF37"
+    },
+    "brand": {
+      "gold": "#D4AF37",
+      "gold_muted": "#C5A059",
+      "emerald": "#064E3B",
+      "emerald_bright": "#097969"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Cormorant Garamond', serif",
+      "body": "'Outfit', sans-serif",
+      "mono": "'Space Mono', monospace"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter leading-none",
+      "h2": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-none",
+      "h3": "text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight",
+      "h4": "text-xl sm:text-2xl font-medium",
+      "body_large": "text-lg lg:text-xl font-light leading-relaxed",
+      "body": "text-base font-light leading-relaxed",
+      "caption": "text-sm uppercase tracking-[0.2em] font-medium"
+    },
+    "guidelines": "Headings must use tight tracking and light/normal weights to emphasize elegance. Overlines and small labels must be uppercase with wide tracking (0.2em). Never use pure white for text; always use soft cream (#FDFBF7)."
+  },
+  "spacing_and_layout": {
+    "grid": "Use Asymmetrical bento grids for galleries and experience sections. Avoid perfect symmetry to create tension and artful layouts.",
+    "spacing": "Generous spacing. Use py-24 or py-32 for section paddings. Let elements breathe.",
+    "containers": "Max width 7xl (max-w-7xl) with px-6 or px-8 for mobile/tablet paddings."
+  },
+  "visual_effects": {
+    "glassmorphism": "backdrop-blur-xl bg-black/60 border border-white/10 shadow-2xl. Use this for sticky navbars, modal overlays, and premium floating cards.",
+    "noise": "Apply a subtle noise/grain texture overlay (opacity 5-10%) on dark backgrounds to make the black feel like velvet.",
+    "shadows": "Replace harsh drop shadows with ambient glows. Example: shadow-[0_0_40px_rgba(6,78,59,0.2)] for a soft emerald glow behind featured items.",
+    "gradients": "Subtle, slow-moving radial or liquid gradients using the dark emerald and black."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#D4AF37] text-black border border-[#D4AF37] hover:bg-transparent hover:text-[#D4AF37] transition-all duration-300 uppercase tracking-widest text-sm px-8 py-4",
+      "outline": "bg-transparent text-[#D4AF37] border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 uppercase tracking-widest text-sm px-8 py-4",
+      "magnetic": "Wrap buttons in a Framer Motion magnetic hover effect to pull slightly towards the cursor."
+    },
+    "cards": {
+      "base": "bg-[#121212] border border-white/5 rounded-none p-8",
+      "hover": "3D tilt on hover using Framer Motion, with the border transitioning to border-[#D4AF37]/30."
+    },
+    "navbar": "Sticky at the top. Starts transparent, transitions to Crystal Glass (backdrop-blur-xl bg-black/60) on scroll.",
+    "cursor": "Custom cursor required: A small gold dot (#D4AF37) that follows the mouse instantly, accompanied by a larger hollow circle that trails behind. Use mix-blend-mode: difference where applicable."
+  },
+  "animation_guidelines": {
+    "libraries": ["framer-motion", "lucide-react", "clsx", "tailwind-merge"],
+    "page_transitions": "Slide up (y: 20 -> 0) and fade in (opacity: 0 -> 1) with easeOut transition.",
+    "scroll_animations": "Staggered fade up for text blocks. Parallax effect for hero images and large background images.",
+    "loading": "Full-screen luxury loading animation. Deep black background, minimal gold line drawing or text revealing slowly before mounting the page."
+  },
+  "pages": [
+    {
+      "name": "Home",
+      "layout": "Immersive full-screen hero with parallax background. Animated heading revealing word-by-word. Bento grid for 'Featured Story' and 'Signature Dishes'. Parallax banner transitioning into the reservations CTA."
+    },
+    {
+      "name": "Menu",
+      "layout": "Elegant interactive category filtering (Starters, Mains, Desserts, Cocktails). Use 3D hover tilt cards for menu items. Include 'Chef Recommended' badges in gold. Background features a dark emerald liquid gradient."
+    },
+    {
+      "name": "Experience & Ambience",
+      "layout": "Editorial-style asymmetrical layout. Large typography intersecting with high-quality interior images. Statistics/Facts (e.g., '15+ Years Michelin Experience') presented in large gold numbers."
+    },
+    {
+      "name": "Gallery",
+      "layout": "Masonry grid layout mixing portrait and landscape shots. Images expand into a full-screen lightbox on click."
+    },
+    {
+      "name": "Reservations",
+      "layout": "Split layout: Left side features a sticky cinematic image of the restaurant interior. Right side features a premium, step-by-step reservation form inside a glassmorphism container."
+    },
+    {
+      "name": "About/Story",
+      "layout": "Timeline layout showcasing the origin of the restaurant, philosophy of vegetarian fine dining, and chef profiles."
+    },
+    {
+      "name": "Events, Testimonials, Blog, Contact",
+      "layout": "Clean, grid-based layouts maintaining the dark luxury aesthetic. Contact page must include a dark-mode styled map embed."
+    }
+  ],
+  "image_urls": {
+    "hero_backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1731980444139-7c0a42e45806",
+        "description": "Abstract dark green and gold liquid texture for background"
+      },
+      {
+        "url": "https://images.pexels.com/photos/14921312/pexels-photo-14921312.jpeg",
+        "description": "Stunning abstract marbling pattern in green and gold"
+      }
+    ],
+    "ambience": [
+      {
+        "url": "https://images.pexels.com/photos/16046683/pexels-photo-16046683.jpeg",
+        "description": "Beautifully designed dark restaurant interior"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1680946496238-5272d3c407fc",
+        "description": "Luxury dark restaurant setting"
+      }
+    ],
+    "food_and_drinks": [
+      {
+        "url": "https://images.pexels.com/photos/27774175/pexels-photo-27774175.jpeg",
+        "description": "Exquisite plated vegetarian dish"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1769816042376-e7b16f728013",
+        "description": "Fresh vegetables fine dining plating"
+      },
+      {
+        "url": "https://images.pexels.com/photos/29319320/pexels-photo-29319320.jpeg",
+        "description": "Atmospheric shot of a smoky artisan cocktail"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "You are building a production-ready, multi-page website using React, Tailwind CSS, and Framer Motion.",
+    "Ensure 'Cormorant Garamond' and 'Outfit' fonts are imported from Google Fonts in the global CSS or index.html.",
+    "Do not use generic Shadcn components out-of-the-box. Customize them heavily to match the luxury aesthetic, stripping away the 'Vercel-look'.",
+    "Implement Lenis for smooth scrolling across the entire application.",
+    "Ensure all interactive elements have hover states (e.g., text color changes to gold, borders highlight).",
+    "Add 'data-testid' attributes to all buttons, links, and forms for testing purposes.",
+    "Build the custom cursor exactly as described: gold dot with trailing hollow circle.",
+    "Never use placeholder image URLs. Use the provided high-quality image URLs from the 'image_urls' object."
+  ]
+}
