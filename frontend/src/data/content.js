@@ -89,7 +89,7 @@ export const MENU_ITEMS = [
   {
     name: "Galouti Kebab — Banaras",
     category: "starters",
-    price: 520,
+    
     image: IMAGES.paneerRolls,
     desc: "Slow-cooked aubergine & cashew galouti with saffron sheermal.",
     chef: true,
@@ -97,7 +97,7 @@ export const MENU_ITEMS = [
   {
     name: "Truffle Khichdi Royale",
     category: "signature",
-    price: 1180,
+    
     image: IMAGES.food1,
     desc: "Heirloom rice, mung dal, black truffle shavings, ghee aged 60 days.",
     chef: true,
@@ -105,21 +105,21 @@ export const MENU_ITEMS = [
   {
     name: "Paneer Tikka Royale",
     category: "starters",
-    price: 580,
+    
     image: IMAGES.paneerTikka,
     desc: "Cottage cheese aged 24 hours, hara masala, smoked over mango wood.",
   },
   {
     name: "Kashmiri Morel Pulao",
     category: "mains",
-    price: 980,
+    
     image: IMAGES.paneerStirfry,
     desc: "Wild morels, basmati, saffron, fried onions and crushed pistachio.",
   },
   {
     name: "Dal Taksh — 36 Hours",
     category: "signature",
-    price: 720,
+    
     image: IMAGES.paneerMakhani,
     desc: "Black lentils slow simmered overnight on charcoal embers, finished with white butter.",
     chef: true,
@@ -127,28 +127,28 @@ export const MENU_ITEMS = [
   {
     name: "Awadhi Subz Korma",
     category: "mains",
-    price: 740,
+    
     image: IMAGES.paneerCashew,
     desc: "Heirloom vegetables, almond-cashew gravy, saffron and rose petals.",
   },
   {
     name: "Palak Paneer Royale",
     category: "mains",
-    price: 620,
+    
     image: IMAGES.palakPaneer,
     desc: "Hand-stone ground spinach, cottage cheese cubes, finished with cream and white butter.",
   },
   {
     name: "Khasta Kaju Curry",
     category: "mains",
-    price: 690,
+    
     image: IMAGES.paneerCurry2,
     desc: "Whole roasted cashews, makhani veloutè, charred tomato chutney.",
   },
   {
     name: "Saffron Phirni Crème",
     category: "desserts",
-    price: 380,
+    
     image: IMAGES.dessertKheer,
     desc: "Slow set rice pudding, Kashmiri saffron, candied rose, edible 24k gold leaf.",
     chef: true,
@@ -156,35 +156,35 @@ export const MENU_ITEMS = [
   {
     name: "Gulab Jamun Cheesecake",
     category: "desserts",
-    price: 420,
+    
     image: IMAGES.dessertSweet,
     desc: "Mascarpone cheesecake, warm gulab jamun, cardamom anglaise.",
   },
   {
     name: "Rasmalai Tres Leches",
     category: "desserts",
-    price: 440,
+    
     image: IMAGES.dessertPudding,
     desc: "Tres leches sponge soaked in rabri, pistachio dust, rose syrup.",
   },
   {
     name: "Smoked Tulsi Spritz",
     category: "beverages",
-    price: 480,
+   
     image: IMAGES.cocktailMint,
     desc: "Holy basil, cucumber, tonic, finished with smoked applewood.",
   },
   {
     name: "Mango Saffron Bellini",
     category: "beverages",
-    price: 520,
+    
     image: IMAGES.cocktailGold,
     desc: "Alphonso puree, saffron threads, sparkling, citrus oil rinse.",
   },
   {
     name: "Masala Chai Old Fashioned",
     category: "beverages",
-    price: 460,
+    
     image: IMAGES.chai,
     desc: "Chai-infused syrup, smoked sugar, single origin bitters.",
     chef: true,
@@ -192,7 +192,7 @@ export const MENU_ITEMS = [
   {
     name: "Royal Thandai Mocktail",
     category: "beverages",
-    price: 360,
+
     image: IMAGES.lassi,
     desc: "Rose, fennel, almond milk, candied fennel garnish.",
   },
@@ -275,25 +275,25 @@ export const EVENTS = [
     title: "Birthday Soirées",
     image: IMAGES.party,
     desc: "Cinematic celebrations for 20 — 120 guests with curated tasting menus, custom cake, and ambient lighting moods.",
-    starts: "₹ 1,250 / guest",
+    
   },
   {
     title: "Corporate Dinners",
     image: IMAGES.ambience1,
     desc: "Private rooms with high-acoustic isolation, AV setup, dedicated maître d' and bespoke business plating.",
-    starts: "₹ 1,800 / guest",
+    
   },
   {
     title: "Family Gatherings",
     image: IMAGES.table,
     desc: "Multigenerational celebrations across our heritage hall — from milestone anniversaries to engagements.",
-    starts: "₹ 1,100 / guest",
+   
   },
   {
     title: "Engagements & Sangeets",
     image: IMAGES.ambience2,
     desc: "Up to 120 guests, dance floor, royal mandap décor, mehendi station and live thali stations.",
-    starts: "₹ 1,650 / guest",
+   
   },
 ];
 
