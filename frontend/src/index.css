@@ -190,6 +190,10 @@ html.lenis body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* Italic serif descenders (g, y, p, j) need room when leading is < 1 */
+  padding-bottom: 0.12em;
+  line-height: 1.05;
+  display: inline-block;
 }
 
 .shimmer-text {
