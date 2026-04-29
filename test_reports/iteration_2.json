@@ -1,0 +1,40 @@
+{
+  "summary": "Iteration 2 frontend retest after Home becoming long-scroll + new LoadingScreen. Loading screen, Hero, Philosophy, Signatures, Reserve CTA, Menu preview, Testimonial carousel (home-testimonials prev/next), reservation submit (reservation-success shown), contact submit (contact-success shown), gallery tabs+lightbox — all pass. Long-scroll Home is ~13285px, all 14 sections render with no console errors. CRITICAL UI bug: on desktop the Navbar Reserve-button column (div.flex.items-center.gap-3.justify-end) overlaps the rightmost nav links and intercepts pointer events, so clicks on data-testid='nav-link-journal' and data-testid='nav-link-contact' do NOT navigate (URL stays put). Fixable via CSS (pointer-events / width / z-index).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "Navbar",
+        "issue": "On lg+ screens the right-side Reserve column (div.flex.items-center.gap-3.justify-end at /app/frontend/src/components/Navbar.jsx line 67) overlays the centered nav links. Playwright reports: '<div class=\"flex items-center gap-3 justify-end\"> intercepts pointer events'. Visible result: clicking 'Journal' (nav-link-journal) and 'Contact' (nav-link-contact) does nothing — URL stays on the current route. Story/Menu/Ambience/Gallery/Events still navigate because they sit further left, outside the 3rd grid column. JS-level .click() on the <a> still works (proves routes are fine and href='/blog' is correct), confirming the issue is purely an overlay/pointer-events problem.",
+        "selector": "[data-testid=\"nav-link-journal\"], [data-testid=\"nav-link-contact\"]",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Navbar grid", "issues": ["The 3-column grid (grid-cols-3) gives equal width to logo / nav / reserve cells. With 8 centered nav items the middle cell is wider than expected and ends up visually behind the right cell — resulting in last 2 links being click-blocked."]}
+    ]
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_taksh_backend.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Fix Navbar overlay so Journal & Contact links are clickable. Suggested fix in /app/frontend/src/components/Navbar.jsx: either (a) add `pointer-events-none` to the right-column wrapper and `pointer-events-auto` to its children (Reserve link + mobile menu button), or (b) replace `grid grid-cols-2 lg:grid-cols-3` with a `flex items-center justify-between` layout so the 3 sections size to content, or (c) give the centered <nav> `relative z-10` so it stacks above the right-column div."
+  ],
+  "critical_code_review_comments": [
+    "Navbar uses lg:grid-cols-3 with a justify-end flex in the 3rd cell; the cell's full grid-column width sits on top of the centered nav links and intercepts clicks on the rightmost ones. This is a regression-prone layout — prefer flex/justify-between or pointer-events tweaks.",
+    "LoadingScreen blocks the viewport for ~3.9s (3000ms timer + 0.9s exit). Acceptable for first paint but consider showing it only on first visit (sessionStorage) to avoid re-blocking on route changes if it ever gets re-mounted.",
+    "Home.jsx is a single 679-line file with 14 in-file section components — splitting each section into its own file under src/components/home/ would improve maintainability and Fast-Refresh granularity.",
+    "TestimonialCarousel auto-advances every 7.5s; manual prev/next clicks should pause auto-advance for ~10s for a calmer UX (same comment as iteration 1, still applies).",
+    "All key interactive elements continue to expose data-testid — testability remains excellent."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100% (re-used iteration 1 suite — not re-run this iteration)", "frontend": "~85% (12/14 nav links + flows pass; 2 nav links blocked by overlay)"},
+  "test_credentials": "None required",
+  "seed_data_creation": "Submitted TEST_iter2_user reservation (date 2026-12-25 20:00, 4 guests) and TEST_iter2_contact contact message via the public forms — both returned success UI states. Records should now be in MongoDB (test_database.reservations / contact_messages).",
+  "retest_needed": true,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "After the Navbar fix is applied, retest by going to /events (or any deep page) and clicking nav-link-journal and nav-link-contact via Playwright `page.click()` (NOT force=True or JS .click()) — this reproduces the real user click. If those clicks navigate, the bug is fixed. Wait 5s after page load for the LoadingScreen to fully exit before clicking nav links. Long-scroll home is ~13285px tall — scroll incrementally if asserting on lazy/whileInView animations.",
+  "rca of the issue": "The Navbar root grid (lg:grid-cols-3) divides the header into 3 equal-width cells: [logo][nav-links][reserve+mobile-toggle]. The centered <nav> in cell 2 visually overflows toward the right edge when there are 8 long-letter links (Home/Story/Menu/Ambience/Gallery/Events/Journal/Contact). Cell 3's wrapper <div class='flex items-center gap-3 justify-end'> spans the entire 3rd grid column from its left edge to the right edge of the header, even though its visible content (Reserve button) is pushed to the right via justify-end. The empty area on the left side of cell 3 still receives pointer events and sits above the nav link <a> elements (later DOM sibling paints on top in the same stacking context). The two rightmost nav anchors (Journal & Contact) physically sit under that empty area and become unclickable. Reproduction: visit any page on desktop (>=1024px), try to click 'Journal' or 'Contact' in the top nav — nothing happens. Mitigation options listed in action_items."
+}

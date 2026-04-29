@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&family=Sacramento&family=Great+Vibes&family=Space+Mono:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -146,6 +146,11 @@ html.lenis body {
   background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
   height: 1px;
   width: 100%;
+}
+
+/* Logo: invert white background to black, keep gold tones */
+.brand-logo {
+  filter: invert(1) hue-rotate(180deg) saturate(1.5) brightness(1.35) contrast(1.05);
 }
 
 .gold-text-gradient {

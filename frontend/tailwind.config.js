@@ -8,6 +8,8 @@ module.exports = {
         serif: ["'Cormorant Garamond'", "serif"],
         sans: ["'Outfit'", "ui-sans-serif", "system-ui"],
         mono: ["'Space Mono'", "monospace"],
+        script: ["'Sacramento'", "cursive"],
+        signature: ["'Great Vibes'", "cursive"],
       },
       borderRadius: {
         lg: "var(--radius)",

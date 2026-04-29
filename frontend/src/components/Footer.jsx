@@ -11,10 +11,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-serif text-5xl tracking-[0.16em] gold-text-gradient">
-              TAKSH
-            </div>
-            <p className="eyebrow mt-3 text-gold-muted">Crafted Veg Experience</p>
+            <img
+              src={BRAND.logo}
+              alt="Taksh — Crafted Veg Experience"
+              className="brand-logo h-28 lg:h-32 w-auto object-contain -ml-3"
+            />
             <p className="mt-6 text-cream/70 max-w-md leading-relaxed">
               A pure vegetarian fine dining destination — where heritage Indian
               flavours are reframed through patience, craft and an

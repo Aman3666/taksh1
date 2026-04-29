@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS } from "../data/content";
+import { NAV_LINKS, BRAND } from "../data/content";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +25,7 @@ export default function Navbar() {
       <motion.header
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 2.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ delay: 3.0, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
           scrolled ? "glass" : "bg-transparent"
         }`}
@@ -34,12 +34,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-3 items-center h-20">
           <Link
             to="/"
-            className="flex items-baseline group shrink-0"
+            className="flex items-center group shrink-0"
             data-testid="navbar-logo-link"
           >
-            <span className="font-serif text-2xl lg:text-3xl tracking-[0.18em] text-cream group-hover:text-gold transition-colors">
-              TAKSH
-            </span>
+            <img
+              src={BRAND.logo}
+              alt="Taksh — Crafted Veg Experience"
+              className="brand-logo h-14 lg:h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center justify-center gap-7">

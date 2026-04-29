@@ -3,6 +3,7 @@
 export const BRAND = {
   name: "Taksh",
   tagline: "Crafted Veg Experience",
+  logo: "https://customer-assets.emergentagent.com/job_taksh-crafted/artifacts/0tt6omin_image.png",
   city: "Chhatrapati Sambhajinagar",
   address:
     "Goldi Cinemark Complex, Railway Station Road, Chhatrapati Sambhajinagar, Maharashtra",
@@ -49,9 +50,10 @@ export const IMAGES = {
   paneerMomos: "https://images.pexels.com/photos/28445589/pexels-photo-28445589.jpeg?auto=compress&cs=tinysrgb&w=1200",
   paneerSpinach: "https://images.pexels.com/photos/36701465/pexels-photo-36701465.jpeg?auto=compress&cs=tinysrgb&w=1200",
   // Indian veg desserts/drinks/sweets - using safe veg keywords
-  dessertGulab: "https://images.pexels.com/photos/14705141/pexels-photo-14705141.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  dessertSweet: "https://images.pexels.com/photos/13063404/pexels-photo-13063404.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  dessertKheer: "https://images.pexels.com/photos/16775471/pexels-photo-16775471.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  dessertGulab: "https://images.pexels.com/photos/13040266/pexels-photo-13040266.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  dessertSweet: "https://images.pexels.com/photos/13532753/pexels-photo-13532753.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  dessertKheer: "https://images.pexels.com/photos/33430555/pexels-photo-33430555.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  dessertPudding: "https://images.pexels.com/photos/20692141/pexels-photo-20692141.jpeg?auto=compress&cs=tinysrgb&w=1200",
   cocktailMint: "https://images.pexels.com/photos/3407779/pexels-photo-3407779.jpeg?auto=compress&cs=tinysrgb&w=1200",
   cocktailGold: "https://images.pexels.com/photos/2531188/pexels-photo-2531188.jpeg?auto=compress&cs=tinysrgb&w=1200",
   chai: "https://images.pexels.com/photos/4109742/pexels-photo-4109742.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -154,14 +156,14 @@ export const MENU_ITEMS = [
     name: "Gulab Jamun Cheesecake",
     category: "desserts",
     price: 420,
-    image: IMAGES.dessertGulab,
+    image: IMAGES.dessertSweet,
     desc: "Mascarpone cheesecake, warm gulab jamun, cardamom anglaise.",
   },
   {
     name: "Rasmalai Tres Leches",
     category: "desserts",
     price: 440,
-    image: IMAGES.dessertSweet,
+    image: IMAGES.dessertPudding,
     desc: "Tres leches sponge soaked in rabri, pistachio dust, rose syrup.",
   },
   {
